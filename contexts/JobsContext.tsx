@@ -45,7 +45,7 @@ export interface Application {
     phone: string;
     cv_url: string;
     cover_letter: string;
-    status: 'new' | 'viewed' | 'shortlisted' | 'rejected';
+    status: 'new' | 'viewed' | 'shortlisted' | 'rejected' | 'reviewed' | 'hired';
     created_at: string;
     city: string;
     answers?: Record<string, string>; // question_id -> answer

@@ -37,7 +37,7 @@ interface Application {
 interface DashboardApplicationsProps {
     applications: Application[];
     jobs: Job[];
-    updateApplicationStatus: (id: number, status: string) => Promise<void>;
+    updateApplicationStatus: (id: number, status: 'new' | 'viewed' | 'shortlisted' | 'rejected' | 'reviewed' | 'hired') => Promise<void>;
 }
 
 export function DashboardApplications({ applications, jobs, updateApplicationStatus }: DashboardApplicationsProps) {
@@ -240,7 +240,7 @@ export function DashboardApplications({ applications, jobs, updateApplicationSta
                                                                 'bg-gray-50 text-gray-700 border-gray-200'
                                                     }`}
                                                 value={app.status || 'new'}
-                                                onChange={(e) => updateApplicationStatus(app.id, e.target.value)}
+                                                onChange={(e) => updateApplicationStatus(app.id, e.target.value as any)}
                                                 title="تغيير حالة الطلب"
                                                 aria-label="تغيير حالة الطلب"
                                             >

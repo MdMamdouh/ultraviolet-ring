@@ -18,7 +18,7 @@ interface Job {
 interface DashboardOverviewProps {
     jobs: Job[];
     applications: any[];
-    updateJobStatus: (jobId: number, status: 'published' | 'pending_review' | 'closed' | 'archived' | 'rejected') => void;
+    updateJobStatus: (jobId: number, status: 'published' | 'pending_review' | 'closed' | 'archived' | 'rejected' | 'draft') => void;
 }
 
 export function DashboardOverview({ jobs, applications, updateJobStatus }: DashboardOverviewProps) {
